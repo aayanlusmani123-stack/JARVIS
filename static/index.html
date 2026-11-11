@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070b13" />
+    <meta name="description" content="JARVIS personal AI assistant" />
+    <title>JARVIS — Personal AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="JARVIS home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>JARVIS<span class="brand-dot">.</span></span>
+        </a>
+        <div class="topbar-right">
+          <span class="connection"><span class="connection-dot"></span><span id="connection-label">CONNECTING</span></span>
+          <button class="clear-button" id="clear-button" type="button" title="Clear conversation">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6m4-6v6M5 7l1 13h12l1-13M9 7V4h6v3" /></svg>
+            <span>Clear</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="assistant-panel" aria-label="Assistant status">
+          <div class="eyebrow"><span class="eyebrow-line"></span> PERSONAL AI SYSTEM <span class="eyebrow-line"></span></div>
+          <div class="orb-wrap" id="orb-wrap" aria-hidden="true">
+            <div class="orb-ring ring-one"></div><div class="orb-ring ring-two"></div>
+            <div class="orb-core"><div class="orb-shine"></div><div class="orb-center">J</div></div>
+            <div class="orb-spark spark-one"></div><div class="orb-spark spark-two"></div>
+          </div>
+          <h1 id="status-title">At your service.</h1>
+          <p class="status-subtitle" id="status-subtitle">Ready when you are.</p>
+          <div class="waveform" id="waveform" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <div class="mic-state"><span class="mic-indicator" id="mic-indicator"></span><span id="mic-label">MICROPHONE STANDBY</span></div>
+          <button class="talk-button" id="talk-button" type="button" aria-pressed="false">
+            <svg class="mic-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="13" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3m-4 0h8"/></svg>
+            <span id="talk-label">Push to talk</span>
+          </button>
+          <p class="keyboard-hint">OR TYPE YOUR MESSAGE BELOW</p>
+          <div class="voice-controls">
+            <label class="voice-toggle"><input id="voice-toggle" type="checkbox" checked /><span class="toggle-track"><span></span></span><span>Voice replies</span></label>
+            <label class="volume-control" for="volume-control"><span>VOL</span><input id="volume-control" type="range" min="0" max="100" value="75" /><span id="volume-value">75%</span></label>
+          </div>
+        </section>
+
+        <section class="chat-panel" aria-label="Conversation">
+          <div class="chat-heading"><div><span class="section-kicker">YOUR CONVERSATION</span><h2>Let's talk<span class="brand-dot">.</span></h2></div><span class="session-pill"><span></span> PRIVATE SESSION</span></div>
+          <div class="message-list" id="message-list" role="log" aria-live="polite" aria-relevant="additions text">
+            <div class="welcome-card" id="welcome-card">
+              <div class="welcome-icon"><span>✦</span></div>
+              <div><h3>Good to have you here.</h3><p>Ask me anything. Type a message or tap the microphone to get started.</p></div>
+            </div>
+          </div>
+          <div class="composer-wrap">
+            <form class="composer" id="chat-form">
+              <label class="visually-hidden" for="message-input">Message JARVIS</label>
+              <textarea id="message-input" rows="1" maxlength="8000" placeholder="Ask JARVIS anything..." required></textarea>
+              <button class="send-button" type="submit" aria-label="Send message" title="Send message">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7ZM22 2 11 13" /></svg>
+              </button>
+            </form>
+            <div class="composer-footer"><span><kbd>ENTER</kbd> to send <span class="footer-divider">·</span> <kbd>SHIFT + ENTER</kbd> for a new line</span><span class="privacy-note"><span>◆</span> YOUR KEY STAYS PRIVATE</span></div>
+          </div>
+        </section>
+      </main>
+      <footer class="app-footer"><span>JARVIS AI <span class="footer-version">· v1.0</span></span><span>BUILT TO ASSIST. DESIGNED TO LISTEN.</span></footer>
+    </div>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
