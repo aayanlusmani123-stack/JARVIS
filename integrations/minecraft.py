@@ -280,7 +280,8 @@ def minecraft_prompt_context(
         test_notice = " DEVELOPMENT TEST FIXTURE, NOT REAL GAME DATA." if vision.test_mode else ""
         captured_at = vision.captured_at.isoformat() if vision.captured_at else "unknown capture time"
         context.append(
-            f"Visual context ({capture_label}{test_notice}), captured at {captured_at}, analyzed at "
+            f"Visual context ({capture_label}{test_notice}), captured at {captured_at}, "
+            f"timestamp_basis={vision.timestamp_basis}, analyzed at "
             f"{vision.analyzed_at.isoformat()}: {vision.analysis}. Treat unknown/old captures as historical. "
             "If visual observations conflict with timestamped Fabric state, state the discrepancy rather than silently choosing one."
         )
