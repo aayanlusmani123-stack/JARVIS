@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "jarvis_minecraft_bridge",
+  "version": "${version}",
+  "name": "JARVIS Minecraft Bridge",
+  "description": "Sends real client game state to a configured JARVIS backend.",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.jarvis.minecraft.JarvisMinecraftClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
